@@ -1,0 +1,22 @@
+{
+  "name": "cypress_demo",
+  "version": "1.0.0",
+  "description": "cypress demo",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^4.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npx cypress test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.siemens.com:robert.kiss/cypress_demo.git"
+  },
+  "keywords": [
+    "cy"
+  ],
+  "author": "Robert",
+  "license": "ISC"
+}

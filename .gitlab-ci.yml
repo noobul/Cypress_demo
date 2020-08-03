@@ -1,0 +1,28 @@
+image: node:12.16.1
+
+test:
+
+  script:
+    - apt-get update
+    - apt-get install --no-install-recommends -y libgtk2.0-0 
+    - apt-get install --no-install-recommends -y libgtk-3-0 
+    - apt-get install --no-install-recommends -y libnotify-dev 
+    - apt-get install --no-install-recommends -y libgconf-2-4 
+    - apt-get install --no-install-recommends -y libnss3 
+    - apt-get install --no-install-recommends -y libxss1 
+    - apt-get install --no-install-recommends -y libasound2 
+    - apt-get install --no-install-recommends -y libxtst6 
+    - apt-get install --no-install-recommends -y xauth 
+    - apt-get install --no-install-recommends -y xvfb 
+    - rm -rf /var/lib/apt/lists/
+    - npm ci
+    - npx cypress cache path
+    - npx cypress cache list
+
+    - npx cypress run
+  artifacts:
+    when: always
+    paths:
+      - cypress/videos/
+      - cypress/screenshots/
+    expire_in: 1 day
